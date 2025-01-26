@@ -9,7 +9,7 @@ psql -U postgres
 python3 -m venv venvdir
 source venvdir/bin/activate
 django-admin startproject mysite dvd_rental
-python manage.py artapp polls
+python manage.py startapp polls
 python manage.py migrate
 
 python -m pip install Django
