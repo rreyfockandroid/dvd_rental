@@ -8,7 +8,7 @@ class Actor(models.Model):
     actor_id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=45)
     last_name = models.CharField(max_length=45)
-    last_update = models.DateTimeField()
+    last_update = models.DateTimeField(auto_now=True)
 
     # TODO sprawdzic jak ustawic relacje w obie strony
     # film = models.ManyToManyField('Film', db_table='film_actor')
@@ -23,7 +23,7 @@ class Language(models.Model):
     
     language_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=20)
-    last_update = models.DateTimeField()
+    last_update = models.DateTimeField(auto_now=True)
     
     def __str__(self):
         return "[{}] - {}".format(self.language_id, self.name)
