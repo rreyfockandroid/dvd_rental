@@ -3,8 +3,13 @@ from django.http import HttpResponse, JsonResponse
 from django.core import serializers
 from .models import *
 import ast
+from django.template import loader
 
 def index(request):
+    template = loader.get_template('index.html')
+    return HttpResponse(template.render())
+
+def languages(request):
     langs = Language.objects.all()
     llangs = [lang.name + " " + str(lang.language_id) + "<br />" for lang in langs]
     return HttpResponse(llangs)
