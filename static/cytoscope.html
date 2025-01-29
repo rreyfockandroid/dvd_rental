@@ -26,26 +26,95 @@ https://blog.js.cytoscape.org/2016/05/24/getting-started/
 <body>
 
 <div id="cy"></div>
-
+<!--<script src="cytoscape.js">-->
 <script>
     var cy = cytoscape({
         container: document.getElementById('cy'),
         elements: [
+            // nodes
             { data: { id: 'a' } },
             { data: { id: 'b' } },
+            { data: { id: 'c' } },
+            { data: { id: 'd' } },
+            { data: { id: 'e' } },
+            { data: { id: 'f' } },
+            // edges
             {
                 data: {
                     id: 'ab',
                     source: 'a',
-                    target: 'b'
+                    target: 'b'                }
+            },
+            {
+                data: {
+                    id: 'cd',
+                    source: 'c',
+                    target: 'd'
                 }
-            }]
+            },
+            {
+                data: {
+                    id: 'ef',
+                    source: 'e',
+                    target: 'f'
+                }
+            },
+            {
+                data: {
+                    id: 'ac',
+                    source: 'a',
+                    target: 'c'
+                }
+            },
+            {
+                data: {
+                    id: 'be',
+                    source: 'b',
+                    target: 'e'
+                }
+            }
+        ],
+        // layout: {
+        //     name: 'circle'
+        // },
+        style: [
+            {
+                selector: 'node',
+                style: {
+                    shape: 'hexagon',
+                    'background-color': 'red',
+                    label: 'data(id)'
+                },
+            },
+            {
+                selector: 'edge',
+                style: {
+                    width: 2,
+                    'line-color': 'green',
+                    'target-arrow-color': 'blue',
+                    'target-arrow-shape': 'triangle',
+                    'curve-style': 'bezier',
+                    label: 'data(id)'
+                }
+            }
+        ]
     });
-
-
+    for(var i=0; i<10; i++) {
+        cy.add({ data: {id: 'node_'+i} });
+        var source = 'node_'+i;
+        cy.add({data:{
+                id: 'edge_' + i,
+                source: source,
+                target: (i%2 == 0 ? 'a' : 'b')
+            }
+        });
+    }
+    // const sleep = ms => new Promise(r => setTimeout(r, ms));
+    // sleep(2000).then(() => {
+        cy.layout({name: 'circle'}).run();
+    // });
 
 </script>
 
 </body>
-
 </html>
