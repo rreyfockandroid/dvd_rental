@@ -20,3 +20,9 @@ class LanguageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Language
         fields = '__all__'
+
+
+class CutFilmSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Film
+        fields = ['film_id', 'title', 'rental_duration']

@@ -6,5 +6,6 @@ app-run:
 	python manage.py runserver
 
 penv:
-	source venvdir/bin/activate
+	./scripts/activate_venv.sh
+	#source venvdir/bin/activate
 

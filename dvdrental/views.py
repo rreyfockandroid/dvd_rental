@@ -22,3 +22,7 @@ def film(request, id):
     except Film.DoesNotExist as e:
         return HttpResponse("Film not found", status=404)
     
+
+def films(request):
+    films = Film.objects.all()[:20]
+    return JsonResponse(serializers.serialize('python', films), safe=False)
