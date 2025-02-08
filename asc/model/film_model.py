@@ -32,3 +32,9 @@ class FilmModel(Model):
     def __str__(self) -> str:
         return str(self.id) + ' FilmModel; title: ' + self.title + ' desc: ' + self.description + ' rent_dur: ' + str(self.rental_duration) + ' len: ' + str(self.length)
     
+
+    def __eq__(self, value):
+        return self.id == value.id
+    
+    def __hash__(self):
+        return hash(self.id)

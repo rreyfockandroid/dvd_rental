@@ -52,5 +52,6 @@ urlpatterns = [
     path('films/', CutFilmList.as_view(), name="films"),
     path('api/film/<int:pk>/', FilmDetail.as_view(), name="film-detail"),
     path('api/films/', FilmList.as_view(), name="film-list"),
-
+    # curl -X PUT 'http://localhost:8000/dvdrental/api/action/film/' -d '{"id":1000, "title":"Zorro Ark"}'
+    path('api/action/film/', views.film_action, name='film_action') 
 ]
