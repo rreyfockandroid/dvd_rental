@@ -1,0 +1,24 @@
+src/
+├── app/
+│   ├── components/
+│   │   ├── movie-list/
+│   │   │   ├── movie-list.component.ts
+│   │   │   ├── movie-list.component.html
+│   │   │   ├── movie-list.component.css
+│   │   ├── movie-details/
+│   │   │   ├── movie-details.component.ts
+│   │   │   ├── movie-details.component.html
+│   │   │   ├── movie-details.component.css
+│   │   ├── rental-form/
+│   │   │   ├── rental-form.component.ts
+│   │   │   ├── rental-form.component.html
+│   │   │   ├── rental-form.component.css
+│   ├── services/
+│   │   ├── movie.service.ts
+│   ├── models/
+│   │   ├── movie.model.ts
+│   ├── app-routing.module.ts
+│   ├── app.module.ts
+│   ├── app.component.ts
+│   ├── app.component.html
+│   ├── app.component.css

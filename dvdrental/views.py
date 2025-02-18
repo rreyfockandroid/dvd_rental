@@ -30,6 +30,7 @@ def film_action(request):
         body = json.loads(str(request.body, 'utf-8'))
         try:
             id = body['id']
+            # TODO inne pola - dynamicznie najlepiej 
             Film.objects.filter(film_id=id).update(title=body['title'])
             film = Film.objects.get(film_id=id)
             return HttpResponse(film)

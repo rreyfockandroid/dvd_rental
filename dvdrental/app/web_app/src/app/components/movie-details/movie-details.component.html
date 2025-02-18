@@ -1,0 +1,7 @@
+<div class="movie-details" *ngIf="movie">
+    <h2>{{ movie.title }}</h2>
+    <p>{{ movie.description }}</p>
+    <p>Rok produkcji: {{ movie.year }}</p>
+    <p>Dostępność: {{ movie.available ? 'Dostępny' : 'Wypożyczony' }}</p>
+    <button (click)="rentMovie(movie.id)" [disabled]="!movie.available">Wypożycz</button>
+  </div>

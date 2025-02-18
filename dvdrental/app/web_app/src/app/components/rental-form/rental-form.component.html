@@ -1,0 +1,12 @@
+<form [formGroup]="rentalForm" (ngSubmit)="onSubmit()">
+    <label for="name">Imię i nazwisko:</label>
+    <input id="name" formControlName="name" required>
+  
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email" required>
+  
+    <label for="movieId">ID filmu:</label>
+    <input id="movieId" formControlName="movieId" required>
+  
+    <button type="submit" [disabled]="!rentalForm.valid">Wypożycz</button>
+  </form>
